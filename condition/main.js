@@ -8,3 +8,4 @@ if (age < 3) {
   } else {
     message = 'What an unusual age!';
   }
+  console.log(age)
