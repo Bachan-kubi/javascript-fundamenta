@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .container{
+            display: flex;
+            gap: 10px;
+            width: 100%;
+            max-width: 80%;
+            margin: 0 auto;
+            background-color: blue;
+        }
+        .btn{
+            width: 20%;
+        }
+
+        #post{
+            display: grid;
+            grid-template-columns:  1fr 1fr 1fr;
+            gap: 10px;
+            width: 50%;
+            margin-top: 1rem;
+        }
+        .all{
+            background-color: cadetblue;
+            padding: 10px;
+            text-align: center;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+        .all h2{
+            color: blue;
+        }
+        .all:hover{
+            background-color: aquamarine;
+            color: red;
+        }
+        @media only screen and (max-width: 700px) {
+            #post{
+            display: grid;
+            grid-template-columns:  1fr 1fr;
+            gap: 10px;
+        }
+    }
+        @media only screen and (max-width: 500px) {
+            #post{
+            display: grid;
+            grid-template-columns:  1fr;
+            gap: 10px;
+        }
+    }
+    
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="btn">
+            <button onclick="loadData()">Load Data</button>
+        </div>
+        <div id="post">
+                
+        </div>
+    </div>
+    
+    
+
+    <script src="fetch.js"></script>
+</body>
+</html>
