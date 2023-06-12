@@ -16,4 +16,3 @@ if (age < 3) {
   console.log(age);
 =======
   }
->>>>>>> b518e9ce0c0e290df6afdf91cd7b96060e114bd0
