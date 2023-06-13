@@ -1,3 +1,5 @@
-import {a, b} from './topics/User';
+let user = new Object();
+user.name = 'kubi';
+user.lastName = 'rubio';
 
-console.log(a, b);
+console.log(user.lastName);
