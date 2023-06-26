@@ -1,22 +1,17 @@
-// var m = parseInt(prompt("Enter your first Number:    ")); 
-// var n = parseInt(prompt("Enter Your Seconds Number:  "));
+// const now = new Date();
+// console.log(now)
+// console.log(now.toString())
+// console.log(now.getFullYear())
+// console.log(now.getDay())
+// console.log(now.getDate())
 
-// var sum=0;
-// for(var x=m;x>=n; x--){
-  
-// sum+x = x;  
-//  };
+// const pow = new Date("May 1, 1983 08:03 pm");
+// console.log(pow);
 
-//  document.write(sum);
-
-var m = parseInt(prompt("Enter your first number: "));
-var n = parseInt(prompt("Enter your second number: 5"));
-
-var sum = 0;
-
-for (var x = m; x >= n; x--) {
-  sum += x;
-}
-
-
-document.write(sum);
+const number = new Array();
+number[0] = 1;
+number[1] = 2;
+number[2] = 3;
+number[3] = 4;
+console.log(number.join('-'));
+console.log(prototype())
