@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.title{
+    text-align: center;
+}
+.content{
+    display: flex;
+    justify-content: space-around;
+}
+.des{
+    width: 250px;
+}
+.cnt{
+    width: 250px;
+}
+#hover{
+    background-color: red;
+    width: 300px;
+}
