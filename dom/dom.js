@@ -152,15 +152,20 @@ function getFull(){
 
 // fetched();
 
-async function todoCall(){
+//async awaait handling for promise 
+const todoCall = async ()=>{
     try{
         const todo = await fetch('https://jsonplaceholder.typicode.com/todos');
         const res = await todo.json();
         console.log(res);
-    } catch(e){
-        console.log(e)
-    }
-};
+    } catch(e){console.log(e)};
+}
 todoCall();
+
+// promise
+const todo = fetch('https://jsonplaceholder.typicode.com/todos');
+todo
+    .then(res=>res.json())
+    .then(data=>console.log(data))
 
 
