@@ -120,3 +120,43 @@
 console.dir(add);
 })();
 
+// const userInfo = getSomeData('https://aremoteserver.com');
+// console.log(userInfo);
+
+// getSomeData('https://jsonplaceholder.typicode.com/posts', (userInfo) => {
+//    console.log(userInfo);
+// });
+
+
+// const dataFromRemote = fetch('https://jsonplaceholder.typicode.com/posts');
+// dataFromRemote
+//     .then(res=>res.json())
+//     .then(data=>console.log(data))
+//     .catch(err=>console.log(err))
+
+
+// const fetched = async ()=>{
+//     const fetchedData = await fetch('https://jsonplaceholder.typicode.com/posts');
+//     const res = await fetchedData.json();
+//     console.log(res)
+// };
+
+// fetched();
+
+//async awaait handling for promise 
+
+const todoCall = async ()=>{
+    try{
+        const todo = await fetch('https://jsonplaceholder.typicode.com/todos');
+        const res = await todo.json();
+        console.log(res);
+    } catch(e){console.log(e)};
+}
+todoCall();
+
+// promise
+const todo = fetch('https://jsonplaceholder.typicode.com/todos');
+todo
+    .then(res=>res.json())
+    .then(data=>console.log(data))
+

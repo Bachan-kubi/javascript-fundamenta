@@ -153,19 +153,51 @@ function getFull(){
 // fetched();
 
 //async awaait handling for promise 
-const todoCall = async ()=>{
-    try{
-        const todo = await fetch('https://jsonplaceholder.typicode.com/todos');
-        const res = await todo.json();
-        console.log(res);
-    } catch(e){console.log(e)};
+
+// const todoCall = async ()=>{
+//     try{
+//         const todo = await fetch('https://jsonplaceholder.typicode.com/todos');
+//         const res = await todo.json();
+//         console.log(res);
+//     } catch(e){console.log(e)};
+// }
+// todoCall();
+
+// // promise
+// const todo = fetch('https://jsonplaceholder.typicode.com/todos');
+// todo
+//     .then(res=>res.json())
+//     .then(data=>console.log(data))
+
+const getVarC = (callback) => {
+    setTimeout(function() {
+       console.log('A Function that takes some time');
+       callback();
+    }, 3000)
+ }
+//  jjjj
+ const printSomethingC = () => {
+    console.log('Another Function');
+ }
+ 
+ getVarC(printSomethingC);
+
+ const learn = (param)=>{
+    setTimeout(function(){
+        console.log('fist');
+        param()
+    }, 4000)
+ };
+
+ const sec = ()=>{
+    console.log('sec');
+ };
+ learn(sec);
+ 
+
+
+let cb = document.getElementById('cb');
+function display(){
+    document.getElementById('display').innerHTML = 'i am call back fucntion'
 }
-todoCall();
-
-// promise
-const todo = fetch('https://jsonplaceholder.typicode.com/todos');
-todo
-    .then(res=>res.json())
-    .then(data=>console.log(data))
-
-
+cb.addEventListener('click', display);
