@@ -48,17 +48,26 @@ console.dir(pt);
 //         console.log(e)
 //     });
 
-const promises = ()=>{
-    return new Promise((resolve, reject) => {
-        setTimeout(()=>{
-            resolve();
-        }, 2000);
-    });
-}
-promises()
-    .then(
-        res=>console.log('d')
-    )
-    .catch(e=>console.log(e))
+// const promises = ()=>{
+//     return new Promise((resolve, reject) => {
+//         setTimeout(()=>{
+//             resolve();
+//         }, 2000);
+//     });
+// }
+// promises()
+//     .then(
+//         res=>console.log('d')
+//     )
+//     .catch(e=>console.log(e))
 
+
+async function newPromise(){
+    const p = new Promise(function(resolve, reject){
+        setTimeout(()=>resolve("doe!"), 2000);
+    });
+    let result = await p;
+    console.log(result);
+}
+newPromise();
 
