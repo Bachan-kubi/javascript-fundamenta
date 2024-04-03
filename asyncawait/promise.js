@@ -62,12 +62,72 @@ console.dir(pt);
 //     .catch(e=>console.log(e))
 
 
-async function newPromise(){
-    const p = new Promise(function(resolve, reject){
-        setTimeout(()=>resolve("doe!"), 2000);
-    });
-    let result = await p;
-    console.log(result);
-}
-newPromise();
+// async function newPromise(){
+//     const p = new Promise(function(resolve, reject){
+//         setTimeout(()=>resolve("doe!"), 2000);
+//     });
+//     let result = await p;
+//     console.log(result);
+// }
+// newPromise();
 
+// const fetchData = ()=>{
+//     const data = fetch("https://jsonplaceholder.typicode.com/posts");
+//     data.then(
+//         res=>{
+//             if(!res.ok){
+//                 throw new Error("nai");
+//             }
+//             return res.json();
+//         }
+//     )
+//     .then(
+//         jsonData=>console.log(jsonData)
+//     )
+//     .catch(
+//         e=>console.log(e)
+//     )
+// }
+
+// const jsonData = (d)=>{
+//     const p = JSON.stringfy(d)
+//     p.forEach((i)=>{
+//         console.log(i)
+//     })
+// }
+
+// jsonData(fetchData())
+
+const fetchData = () => {
+    return fetch("https://jsonplaceholder.typicode.com/posts")
+        .then(res => {
+            if (!res.ok) {
+                throw new Error("Failed to fetch data");
+            }
+            return res.json();
+        })
+        .then(data=>{
+            console.log(data);
+            displayData(data);
+        })
+        .catch(error => console.error('Error fetching data:', error));
+}
+
+const displayData = (data) => {
+    data.forEach(item => {
+        const d = document.getElementById('b')
+        console.log(item);
+        const p = document.createElement('p');
+        const h4 = document.createElement('h4');
+        h4.textContent = item.body;
+        p.textContent = item.title;
+        p.textContent = item.id;
+        
+        d.appendChild(h4);
+        d.appendChild(p);
+    });
+}
+fetchData();
+// fetchData().then(jsonData => {
+//     displayData(jsonData);
+// });
