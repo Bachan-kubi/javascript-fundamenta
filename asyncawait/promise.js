@@ -1,6 +1,5 @@
 // const promise = new Promise(function(req, res){
-   
-    
+
 //     setTimeout(()=>{
 //         console.log('promise resolved');
 //     }, 1000)
@@ -14,9 +13,7 @@
 //     r=>console.log('r'),
 //     e=>console.log(e)
 // )
-const pt= new Promise((resolve, reject)=>{
-    
-});
+const pt = new Promise((resolve, reject) => {});
 console.dir(pt);
 
 // function fetchData(){
@@ -61,7 +58,6 @@ console.dir(pt);
 //     )
 //     .catch(e=>console.log(e))
 
-
 // async function newPromise(){
 //     const p = new Promise(function(resolve, reject){
 //         setTimeout(()=>resolve("doe!"), 2000);
@@ -99,34 +95,43 @@ console.dir(pt);
 // jsonData(fetchData())
 
 const fetchData = () => {
-    return fetch("https://jsonplaceholder.typicode.com/posts")
-        .then(res => {
-            if (!res.ok) {
-                throw new Error("Failed to fetch data");
-            }
-            return res.json();
-        })
-        .then(data=>{
-            console.log(data);
-            displayData(data);
-        })
-        .catch(error => console.error('Error fetching data:', error));
-}
+  return fetch("https://jsonplaceholder.typicode.com/posts")
+    .then((res) => {
+      if (!res.ok) {
+        throw new Error("Failed to fetch data");
+      }
+      return res.json();
+    })
+    .then((data) => {
+      console.log(data);
+      displayData(data);
+    })
+    .catch((error) => console.error("Error fetching data:", error));
+};
 
 const displayData = (data) => {
-    data.forEach(item => {
-        const d = document.getElementById('b')
-        console.log(item);
-        const p = document.createElement('p');
-        const h4 = document.createElement('h4');
-        h4.textContent = item.body;
-        p.textContent = item.title;
-        p.textContent = item.id;
-        
-        d.appendChild(h4);
-        d.appendChild(p);
-    });
-}
+  data.forEach((item) => {
+    const d = document.getElementById("b");
+    console.log(item);
+    // method-1
+    d.innerHTML += `
+        <h2>${item.body}</h2>
+        <h3>${item.title}</h3>
+        <h5>${item.id}</h5>
+        <p>${item.userId}</p>
+        `;
+    // method-2
+    // const p = document.createElement('p');
+    // const h4 = document.createElement('h4');
+    // h4.textContent = item.body;
+    // p.textContent = item.title;
+    // p.textContent = item.id;
+    // p.textContent = item.userId;
+
+    // d.appendChild(h4);
+    // d.appendChild(p);
+  });
+};
 fetchData();
 // fetchData().then(jsonData => {
 //     displayData(jsonData);
