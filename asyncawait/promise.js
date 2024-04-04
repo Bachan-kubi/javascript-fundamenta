@@ -113,6 +113,8 @@ const displayData = (data) => {
   data.forEach((item) => {
     const d = document.getElementById("b");
     console.log(item);
+    d.classList.add('bg');
+    d.style.backgroundColor = 'green';
     // method-1
     d.innerHTML += `
         <h2>${item.body}</h2>
